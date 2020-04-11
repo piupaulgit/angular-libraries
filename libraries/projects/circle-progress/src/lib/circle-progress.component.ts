@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'easy-circle-progress',
-  template: `
-    <p>
-      circle-progress works!
-    </p>
-  `,
+  templateUrl: './circle-progress.html',
   styles: [
   ]
 })
-export class CircleProgressComponent implements OnInit {
-
+export class CircleProgressComponent implements OnInit, OnChanges {
+  @Input()
+  percentage;
   constructor() { }
 
+  ngOnChanges(){
+    console.log(this.percentage)
+    console.log('ooo')
+  }
   ngOnInit(): void {
+    console.log(this.percentage)
+    console.log('ooo')
   }
 
 }
