@@ -19,6 +19,10 @@
       "circle-progress": [
         "dist/circle-progress/circle-progress",
         "dist/circle-progress"
+      ],
+      "ng-easy-progress-bar": [
+        "dist/ng-easy-progress-bar/ng-easy-progress-bar",
+        "dist/ng-easy-progress-bar"
       ]
     }
   },

@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('circle-progress-example app is running!');
+    expect(page.getTitleText()).toEqual('ng-easy-progress-bar-exmaple app is running!');
   });
 
   afterEach(async () => {

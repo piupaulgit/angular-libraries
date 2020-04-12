@@ -163,6 +163,167 @@
           }
         }
       }
+    },
+    "ng-easy-progress-bar": {
+      "projectType": "library",
+      "root": "projects/ng-easy-progress-bar",
+      "sourceRoot": "projects/ng-easy-progress-bar/src",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-easy-progress-bar/tsconfig.lib.json",
+            "project": "projects/ng-easy-progress-bar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-easy-progress-bar/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-easy-progress-bar/src/test.ts",
+            "tsConfig": "projects/ng-easy-progress-bar/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-easy-progress-bar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-easy-progress-bar/tsconfig.lib.json",
+              "projects/ng-easy-progress-bar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ng-easy-progress-bar-exmaple": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-easy-progress-bar-exmaple",
+      "sourceRoot": "projects/ng-easy-progress-bar-exmaple/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-easy-progress-bar-exmaple",
+            "index": "projects/ng-easy-progress-bar-exmaple/src/index.html",
+            "main": "projects/ng-easy-progress-bar-exmaple/src/main.ts",
+            "polyfills": "projects/ng-easy-progress-bar-exmaple/src/polyfills.ts",
+            "tsConfig": "projects/ng-easy-progress-bar-exmaple/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-easy-progress-bar-exmaple/src/favicon.ico",
+              "projects/ng-easy-progress-bar-exmaple/src/assets"
+            ],
+            "styles": [
+              "projects/ng-easy-progress-bar-exmaple/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-easy-progress-bar-exmaple/src/environments/environment.ts",
+                  "with": "projects/ng-easy-progress-bar-exmaple/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-easy-progress-bar-exmaple:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-easy-progress-bar-exmaple:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-easy-progress-bar-exmaple:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-easy-progress-bar-exmaple/src/test.ts",
+            "polyfills": "projects/ng-easy-progress-bar-exmaple/src/polyfills.ts",
+            "tsConfig": "projects/ng-easy-progress-bar-exmaple/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-easy-progress-bar-exmaple/karma.conf.js",
+            "assets": [
+              "projects/ng-easy-progress-bar-exmaple/src/favicon.ico",
+              "projects/ng-easy-progress-bar-exmaple/src/assets"
+            ],
+            "styles": [
+              "projects/ng-easy-progress-bar-exmaple/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-easy-progress-bar-exmaple/tsconfig.app.json",
+              "projects/ng-easy-progress-bar-exmaple/tsconfig.spec.json",
+              "projects/ng-easy-progress-bar-exmaple/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-easy-progress-bar-exmaple/e2e/protractor.conf.js",
+            "devServerTarget": "ng-easy-progress-bar-exmaple:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-easy-progress-bar-exmaple:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": "20b1e6eb-64e3-418f-be8a-dfb7216aab4a"

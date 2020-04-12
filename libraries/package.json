@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib:build" : "ng build circle-progress"
+    "lib:build": "ng build circle-progress"
   },
   "private": true,
   "dependencies": {
