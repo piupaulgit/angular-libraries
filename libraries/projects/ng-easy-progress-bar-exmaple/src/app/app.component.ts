@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  percentageVal: number = 50;
   title = 'ng-easy-progress-bar-exmaple';
 }

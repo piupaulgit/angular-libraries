@@ -1,23 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ng-easy-progress-bar',
   templateUrl: 'ng-easy-progress-bar.html',
   styles: [],
 })
-export class NgEasyProgressBarComponent implements OnInit {
-  // @Input()
-  // percentage: number;
-  // @Input()
-  // barColor: string;
-  // @Input()
-  // baseColor: string;
-  // @Input()
-  // type: string;
+export class NgEasyProgressBarComponent implements OnInit, OnChanges {
+  @Input()
+  type: string;
+  @Input()
+  value: number;
 
   constructor() {}
 
-  ngOnInit(): void {
-    // console.log(this.percentage, this.barColor, this.baseColor, this.type);
+  ngOnInit(): void {}
+
+  ngOnChanges() {
+    if (this.type.toLowerCase() === 'cicle') {
+    }
   }
 }
